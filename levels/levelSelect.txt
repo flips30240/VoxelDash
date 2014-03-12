@@ -1,6 +1,6 @@
 LoadLevelBox
 3
-35
+40
 2
 1
 0.25
@@ -8,7 +8,7 @@ LoadLevelBox
 fdawesirhfu
 LoadLevelBox
 13
-35
+40
 2
 1
 0.25
@@ -16,7 +16,7 @@ LoadLevelBox
 Fuck Join mE
 LoadLevelBox
 23
-35
+40
 2
 1
 0.25
@@ -24,7 +24,7 @@ LoadLevelBox
 HomeLevel
 LoadLevelBox
 33
-35
+40
 2
 1
 0.25
@@ -32,7 +32,7 @@ LoadLevelBox
 LevelGenerator
 LoadLevelBox
 43
-35
+40
 2
 1
 0.25
@@ -40,7 +40,7 @@ LoadLevelBox
 Maybe
 LoadLevelBox
 53
-35
+40
 2
 1
 0.25
@@ -48,18 +48,26 @@ LoadLevelBox
 ohai
 LoadLevelBox
 63
-35
+40
 2
 1
 0.25
 4
 ohshit
+LoadLevelBox
+73
+40
+2
+1
+0.25
+4
+the fuck
 Platform
 0
 0
 0
-70
-70
+80
+80
 1
 SetSpawn
 0
