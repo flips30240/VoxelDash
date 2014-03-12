@@ -1,0 +1,10 @@
+forward
+w
+reverse
+s
+left
+a
+right
+d
+Mouse Y Axis Inverted
+yes

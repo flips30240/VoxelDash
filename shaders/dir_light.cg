@@ -1,0 +1,87 @@
+//Cg
+
+// VERTEX SHADER //
+void vshader(
+            float4 vtx_position  : POSITION,
+            float3 vtx_normal    : NORMAL,
+            out float4 l_position : POSITION,
+            out float4 l_color     : COLOR,
+            out float4 l_shadowcoord : TEXCOORD1,
+	        out float4 l_lightclip : TEXCOORD3,
+            uniform float4 k_push,
+            uniform float3 k_scale,
+            uniform float3 k_specular,
+            uniform float4x4 mat_modelproj,
+            uniform float4x4 trans_model_to_world,
+            uniform float4x4 trans_model_to_clip_of_light,
+            uniform float3 k_globalambient,
+            uniform float3 k_lightcolor,
+            uniform float4 wspos_A,
+            uniform float4 wspos_B,
+            uniform float4 wspos_camera)
+
+{
+
+    float4 position = vtx_position * float4(k_scale,1);
+
+    l_position = mul(mat_modelproj, position); 
+
+    float3 P; // point being lit
+    float3 N; // surface normal
+    float3 L; // light ray vector
+    float3 V; // vector toward the viewpoint
+    float3 H; // vector halfway between V and L
+    
+    float diffuse_light; // amount of diffuse light per vertex
+    float specular_light; // amount of specular light per vertex
+    
+    // transformations into world space
+    P = mul(trans_model_to_world, vtx_position); 
+    N = normalize(mul(float3x3(trans_model_to_world), vtx_normal)); 
+
+    // calculate diffuse light
+    L = normalize(wspos_A - wspos_B);
+    diffuse_light = max(dot(N, L), 0)  ;
+
+    // calculate specular light
+    V = normalize(wspos_camera - P);
+    H = normalize(L + V);
+    specular_light = pow(max(dot(N, H), 0), k_specular.x);
+    if (diffuse_light <= 0) specular_light = 0;
+
+    l_color.xyz = diffuse_light * k_lightcolor + specular_light * k_lightcolor + k_globalambient;
+    l_color.w = 1;
+
+    // calculate light-space clip position.
+    float4 pushed = position + float4(vtx_normal * k_push, 0);
+    l_lightclip = mul(trans_model_to_clip_of_light, pushed);
+
+    // calculate shadow-map texture coordinates.
+    l_shadowcoord = l_lightclip * float4(0.5,0.5,0.5,1.0) + l_lightclip.w * float4(0.5,0.5,0.5,0.0);
+}
+
+
+// PIXEL SHADER //
+void fshader(
+             uniform sampler2D k_shadowmap : TEXUNIT3,
+             in float4 l_color : COLOR,
+             in float4 l_shadowcoord : TEXCOORD1,
+             in float  l_smooth : TEXCOORD2,
+             in float4 l_lightclip : TEXCOORD3,
+             out float4 o_color : COLOR0)
+{
+    float3 circleoffs;
+    float falloff;
+    float shade;
+
+    // calculate light falloff
+    circleoffs = float3(l_lightclip.xy / l_lightclip.w, 0);
+    falloff = saturate(1.0 - dot(circleoffs, circleoffs));
+
+    // calculate shadows projection
+    shade = tex2Dproj(k_shadowmap,l_shadowcoord);
+
+    // final output 
+    o_color = l_color * shade * falloff ;
+    
+}

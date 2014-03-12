@@ -1,0 +1,27 @@
+{
+  "mainFile": "C:/Users/Flips/Documents/Jutsu's/VoxelDashLauncher/VoxelDash/main.py", 
+  "venv": "", 
+  "relatedProjects": [
+    "C:\\Panda3D-1.9.0"
+  ], 
+  "name": "VoxelDash", 
+  "license": "GNU General Public License v3", 
+  "url": "", 
+  "pythonPath": "C:/Panda3D-1.8.0/python/ppython.exe", 
+  "preExecScript": "", 
+  "programParams": "", 
+  "PYTHONPATH": "", 
+  "supported-extensions": [
+    ".py", 
+    ".html", 
+    ".jpg", 
+    ".png", 
+    ".ui", 
+    ".css", 
+    ".json", 
+    ".ini"
+  ], 
+  "project-type": "", 
+  "postExecScript": "", 
+  "description": ""
+}
