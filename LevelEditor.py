@@ -226,7 +226,7 @@ class LevelEditor(DirectObject.DirectObject, object):
         #self.cube.setPos(-0.5, 0, 0)
         #self.node.setPos(0, 0, 0)
 
-        tex = loader.loadTexture("./VoxelDash/textures/player.png")
+        tex = loader.loadTexture("./textures/player.png")
         #self.cube.setTexture(tex)
 
 

@@ -128,7 +128,7 @@ class pCollisions(DirectObject):
             fromNode.clearTexture()
             fromNode.setColor(1, 0, 0, 1)
             fromNode.setShaderAuto()
-            self.music.playSound("./VoxelDash/sounds/thump.mp3", .03, False)
+            self.music.playSound("./sounds/thump.mp3", .03, False)
         #self.world.removeRigidBody(bulletNode)
         #fromNode.remove()
         collNode.removeNode()
@@ -240,7 +240,7 @@ class pCollisions(DirectObject):
 
         base.messenger.send("escape")
         
-        for root, dirs, files in os.walk("./VoxelDash/levels/"):
+        for root, dirs, files in os.walk("./levels/"):
             for name in files:
                 if name == str(arg) + ".txt":
                     print(name + " Already Exists!")
@@ -305,7 +305,7 @@ class pCollisions(DirectObject):
             print( str(arg) + " does not contain .txt!")
         #try:
         self.levelNode.removeNode()
-        self.levelParser.initParse("./VoxelDash/levels/" + str(arg) + ".txt", self, self.playerNP, self.world, self.scoreHandler)
+        self.levelParser.initParse("./levels/" + str(arg) + ".txt", self, self.playerNP, self.world, self.scoreHandler)
         self.levelLoadBool = False
         #except:
             #self.errorText = OnscreenText(text = 'That Level Name Does Not Exist!\n Hit Shift to Try Again', pos = (0.0, 0.02), scale = 0.07)

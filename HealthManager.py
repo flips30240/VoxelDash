@@ -28,7 +28,7 @@ class HealthManager():
             for i in range(self.playerHealth):
                 self.healthList[i] = DirectFrame()
                 x = self.healthList[i]
-                x["image"] = "./VoxelDash/graphics/heart.png"
+                x["image"] = "./graphics/heart.png"
                 x.setTransparency(1)
                 x.setScale(.02)
                 x.setPos(-1.4 + (float(i)/15), 0, -.94)
@@ -40,7 +40,7 @@ class HealthManager():
             for i in range(self.aiHealth):
                 self.healthList[i] = DirectFrame()
                 x = self.healthList[i]
-                x["image"] = "./VoxelDash/graphics/heart.png"
+                x["image"] = "./graphics/heart.png"
                 x.setTransparency(1)
                 x.setScale(.02)
                 x.setPos(-1.4 + (float(i)/15), 0, -.94)

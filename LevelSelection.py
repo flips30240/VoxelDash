@@ -12,11 +12,12 @@ class LevelSelection():
 		self.createLevelSelection()
 
 	def createFile(self):
-		self.levelFile = open("./VoxelDash/levels/" + "levelSelect.txt", "w")
+		#self.levelFile = open("./VoxelDash/levels/" + "levelSelect.txt", "w")
+		self.levelFile = open("./levels/" + "levelSelect.txt", "w")
 
 	def beginSearch(self):
 		self.levels = []
-		for root, dirs, files in os.walk("./VoxelDash/levels"):
+		for root, dirs, files in os.walk("./levels"):
 			for name in files:
 				if name.endswith((".txt")) and name != "levelSelect.txt":
 					levelName = name[:-4]

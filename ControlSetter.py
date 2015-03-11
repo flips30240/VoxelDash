@@ -19,7 +19,7 @@ class ControlSetter():
 		self.checkForExistingFile()
 
 	def checkForExistingFile(self):
-		for root, dirs, files in os.walk("./VoxelDash/controls"):
+		for root, dirs, files in os.walk("./controls"):
 			if files == []:
 				self.beginControlWizard(0)
 			else:
@@ -27,7 +27,7 @@ class ControlSetter():
 
 	def beginControlWizard(self, arg):
 		if arg == 0:
-			self.controlFile = open("./VoxelDash/controls/ControlsFileConfig.txt", "w")
+			self.controlFile = open("./controls/ControlsFileConfig.txt", "w")
 			print("wtf!!")
 			self.nextControl("forward")
 		if arg == 1:

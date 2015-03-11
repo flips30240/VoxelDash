@@ -32,14 +32,14 @@ class SkyBox():
         #This loads "basic_skybox_#" # being 0-6
         #If the skybox was made in spacescape the files must be renamed to
         #work properly, and the 2 and 3 files should be switched.
-        self.skybox_texture = loader.loadCubeMap("./VoxelDash/textures/SkyBox/box_#.png")
+        self.skybox_texture = loader.loadCubeMap("./textures/SkyBox/box_#.png")
         self.skybox_texture.setAnisotropicDegree(16)
         #self.skybox_texture.setMinfilter(Texture.FTLinearMipmapLinear)
 
         #TODO: Figure out a way (if possible) to allow 3d objects to be seen
         #through the skysphere, It already kinda does this, but its weird.
 
-        self.skybox = NodePath(loader.loadModel("./VoxelDash/models/skybox.x"))
+        self.skybox = NodePath(loader.loadModel("./models/skybox.x"))
         self.skybox.setHpr(90,90,90)
         self.skybox.setLightOff()
         self.skybox.setAttrib(CullFaceAttrib.make(CullFaceAttrib.MCullCounterClockwise))
@@ -72,7 +72,7 @@ class SkyBox():
         self.Sphere.setAttrib(CullFaceAttrib.make(CullFaceAttrib.MCullCounterClockwise))
         #self.snp.setTwoSided(True)
         self.snp.setMaterial(material)
-        texture = loader.loadTexture("./VoxelDash/textures/SpaceTexture.jpg")
+        texture = loader.loadTexture("./textures/SpaceTexture.jpg")
         self.Sphere.setTexture(texture)
         self.snp.reparentTo(base.camera)
         self.snp.setBin("Background", 1)

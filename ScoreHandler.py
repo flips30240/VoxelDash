@@ -68,7 +68,7 @@ class ScoreHandler():
         print(self.levelName)
 
     def parseScoreFile(self):
-        self.scoreFile = open("./VoxelDash/scoreboard/ScoreBoard.txt", "a")
+        self.scoreFile = open("./scoreboard/ScoreBoard.txt", "a")
         self.scoreFile.write(str(self.levelName) + ':' + self.scoreText.getText() + "\n")
         self.scoreFile.close()
 

@@ -13,7 +13,7 @@ class Filters():
 
     def __init__(self):
         self.filters = CommonFilters(base.win, base.cam)
-        self.glowShader = loader.loadShader("./VoxelDash/shaders/glowShader.sha")
+        self.glowShader = loader.loadShader("./shaders/glowShader.sha")
 
     def enableFilters(self, player):
         #self.filters.setBloom(mintrigger=.35)

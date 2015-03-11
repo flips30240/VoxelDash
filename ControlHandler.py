@@ -43,7 +43,7 @@ class ControlHandler():
         base.messenger.send("1")
 
     def parseControlFile(self):
-        self.f = open("./VoxelDash/controls/ControlsFileConfig.txt")
+        self.f = open("./controls/ControlsFileConfig.txt")
         self.lines = self.f.readlines()
         self.f.close()
 

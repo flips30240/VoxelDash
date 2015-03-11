@@ -8,7 +8,7 @@ class Door():
 		self.createDoor(x, y, z)
 
 	def createDoor(self, x, y, z):
-		self.tex = loader.loadTexture("./VoxelDash/textures/door.jpg")
+		self.tex = loader.loadTexture("./textures/door.jpg")
 		#self.tex.setWrapU(Texture.WMRepeat)
 		#self.tex.setWrapV(Texture.WMRepeat)
 

@@ -69,7 +69,7 @@ class Npc(object):
         #material.setSpecular(VBase4(random.random(), random.random(), random.random(), random.random()))
         material.setShininess(random.random())
 
-        myTexture = loader.loadTexture("./VoxelDash/textures/enemy.jpg")
+        myTexture = loader.loadTexture("./textures/enemy.jpg")
         self.enemyNp.setTexture(myTexture)
         self.enemyNp.setMaterial(material)
 

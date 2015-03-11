@@ -64,7 +64,7 @@ class Player():
         #material.setSpecular(VBase4(random.random(), random.random(), random.random(), random.random()))
         material.setShininess(random.random())
 
-        myTexture = loader.loadTexture("./VoxelDash/textures/player.png")
+        myTexture = loader.loadTexture("./textures/player.png")
         self.np.setTexture(myTexture)
         self.np.setMaterial(material)
 
@@ -97,7 +97,7 @@ class Player():
         #material.setSpecular(VBase4(random.random(), random.random(), random.random(), random.random()))
         material.setShininess(random.random())
 
-        myTexture = loader.loadTexture("./VoxelDash/textures/player.png")
+        myTexture = loader.loadTexture("./textures/player.png")
         self.np.setTexture(myTexture)
         self.np.setMaterial(material)
 
@@ -115,7 +115,7 @@ class Player():
 
         if vec3[2] <= 1 and vec3[2] >= -.5:
             self.np.node().setLinearVelocity(self.np.node().getLinearVelocity() + Vec3(0, 0, 10))
-            self.music.playSound("./VoxelDash/sounds/jump.mp3", .01, False)
+            self.music.playSound("./sounds/jump.mp3", .01, False)
             self.score.addToScore("Jump", 200)
         else:
             print("can't jump'")
@@ -169,7 +169,7 @@ class Player():
         ammo = self.ammoList[self.ammoUsed - 1]
         ammo.setPos(self.np.getPos() + Vec3(0, 0, 1))
         ammo.show()
-        self.music.playSound("./VoxelDash/sounds/shoot.mp3", .05)
+        self.music.playSound("./sounds/shoot.mp3", .05)
 
         ammo.node().setLinearVelocity(Vec3(0,0,0))
 

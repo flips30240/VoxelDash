@@ -77,7 +77,7 @@ class initGame():
         base.camLens.setFar(1000)
 
     def playIntroLevelMusic(self):
-        self.music = Music("play","./VoxelDash/sounds/batfeet.mp3", .1, True)
+        self.music = Music("play","./sounds/batfeet.mp3", .1, True)
 
     def getLevelBounds(self):
         self.levelNodeBounds = render.find("renderDummy").getBounds()
@@ -97,7 +97,7 @@ class initGame():
                             if name.endswith(".jpg"):
                                 print(name)
     def initFakeGui(self):
-        self.menuBar = OnscreenImage(image = './VoxelDash/graphics/MenuBar.png', pos = (0,0,-.94))
+        self.menuBar = OnscreenImage(image = './graphics/MenuBar.png', pos = (0,0,-.94))
         self.userText = OnscreenText(text = self.user, pos = (-1.05, -.9625), scale = 0.1)
         self.menuBar.setScale(1.625, 1, .0625)
 
@@ -109,7 +109,7 @@ class initGame():
 
     def parseLevelFile(self, arg):
         if arg == "Home":
-            self.parsedLevel = LevelParser("./VoxelDash/levels/HomeLevel.txt", self.collisions, self.player.np, self.world, self.scoreHandler)
+            self.parsedLevel = LevelParser("./levels/HomeLevel.txt", self.collisions, self.player.np, self.world, self.scoreHandler)
 
     def startTime(self):
         self.time = KeepTime()

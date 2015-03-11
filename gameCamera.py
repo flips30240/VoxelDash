@@ -30,7 +30,7 @@ class gameCamera():
         #self.makeCameraCollision()
 
     def parseControls(self):
-        self.file = open("./VoxelDash/controls/ControlsFileConfig.txt")
+        self.file = open("./controls/ControlsFileConfig.txt")
         self.lines = self.file.readlines()
         self.file.close()
 

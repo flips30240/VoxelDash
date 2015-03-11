@@ -61,7 +61,7 @@ class Level():
         self.collisions.obtainVar(self.renderDummy)
         self.collisions.obtainMoreVar(self.world)
 
-        tempName = fileLocation.split("./VoxelDash/levels/")[1]
+        tempName = fileLocation.split("./levels/")[1]
         self.name = tempName.split(".txt")[0]
         print("Level name is " + str(self.name))
 
@@ -112,39 +112,39 @@ class Level():
         self.collisions.obtainEvenEvenEvenMoreVar(self)
 
     def setUpTexs(self):
-        self.platformTex = loader.loadTexture("./VoxelDash/textures/Platform/platform.jpg")
+        self.platformTex = loader.loadTexture("./textures/Platform/platform.jpg")
         self.platformTex.setWrapU(Texture.WMRepeat)
         self.platformTex.setWrapV(Texture.WMRepeat)
 
-        self.movingPlatformTex = loader.loadTexture("./VoxelDash/textures/MovingPlatform/MovingPlatform.png")
+        self.movingPlatformTex = loader.loadTexture("./textures/MovingPlatform/MovingPlatform.png")
         self.movingPlatformTex.setWrapU(Texture.WMRepeat)
         self.movingPlatformTex.setWrapV(Texture.WMRepeat)
 
-        self.RotationPlatformTex = loader.loadTexture("./VoxelDash/textures/RotationPlatform/RotationPlatform.png")
+        self.RotationPlatformTex = loader.loadTexture("./textures/RotationPlatform/RotationPlatform.png")
         self.RotationPlatformTex.setWrapU(Texture.WMRepeat)
         self.RotationPlatformTex.setWrapV(Texture.WMRepeat)
 
-        self.RotationSidePlatformTex = loader.loadTexture("./VoxelDash/textures/RotationPlatform/RotationSidePlatform.png")
+        self.RotationSidePlatformTex = loader.loadTexture("./textures/RotationPlatform/RotationSidePlatform.png")
         self.RotationSidePlatformTex.setWrapU(Texture.WMRepeat)
         self.RotationSidePlatformTex.setWrapV(Texture.WMRepeat)
 
-        self.hitBoxTex = loader.loadTexture("./VoxelDash/textures/HitBox/HitBox.png")
+        self.hitBoxTex = loader.loadTexture("./textures/HitBox/HitBox.png")
         self.hitBoxTex.setWrapU(Texture.WMRepeat)
         self.hitBoxTex.setWrapV(Texture.WMRepeat)
 
-        self.finishBoxTex = loader.loadTexture("./VoxelDash/textures/finishBox.png")
+        self.finishBoxTex = loader.loadTexture("./textures/finishBox.png")
         self.finishBoxTex.setWrapU(Texture.WMRepeat)
         self.finishBoxTex.setWrapV(Texture.WMRepeat)
 
-        self.loadLevelTex = loader.loadTexture("./VoxelDash/textures/loadLevel.jpg")
+        self.loadLevelTex = loader.loadTexture("./textures/loadLevel.jpg")
         self.loadLevelTex.setWrapU(Texture.WMRepeat)
         self.loadLevelTex.setWrapV(Texture.WMRepeat)
 
-        self.loadLevelEditTex = loader.loadTexture("./VoxelDash/textures/loadLevelEdit.png")
+        self.loadLevelEditTex = loader.loadTexture("./textures/loadLevelEdit.png")
         self.loadLevelEditTex.setWrapU(Texture.WMRepeat)
         self.loadLevelEditTex.setWrapV(Texture.WMRepeat)
 
-        self.lightBallTex = loader.loadTexture("./VoxelDash/textures/lightBall.jpg")
+        self.lightBallTex = loader.loadTexture("./textures/lightBall.jpg")
         self.lightBallTex.setWrapU(Texture.WMRepeat)
         self.lightBallTex.setWrapV(Texture.WMRepeat)
 
@@ -434,12 +434,12 @@ class Level():
         base.setBackgroundColor(*colour)
 
     def createHeightMap(self):
-        tex = loader.loadTexture("./VoxelDash/textures/sand.jpg")
+        tex = loader.loadTexture("./textures/sand.jpg")
         node = BulletRigidBodyNode('HMBox')
         node.setMass(0)
 
         height = 26
-        img = PNMImage(Filename('./VoxelDash/heightmaps/map.png'))
+        img = PNMImage(Filename('./heightmaps/map.png'))
         shape = BulletHeightfieldShape(img, height, ZUp)
         node.addShape(shape)
         self.world.attachRigidBody(node)

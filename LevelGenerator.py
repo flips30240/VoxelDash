@@ -21,7 +21,8 @@ class LevelGenerator():
 
 	def createFile(self):
 
-		self.levelFile = open("./VoxelDash/levels/" + str(self.name) + ".txt", "w")
+		#self.levelFile = open("./VoxelDash/levels/" + str(self.name) + ".txt", "w")
+		self.levelFile = open("./levels/" + str(self.name) + ".txt", "w")
 
 		self.createSeed(randint(1,99))
 

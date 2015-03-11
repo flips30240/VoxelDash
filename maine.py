@@ -89,3 +89,6 @@ class maine(ShowBase):
     def beginStartProcess(self):
         self.destroyAllMenus("allMenus")
         ControlSetter(self.wp, self.user, self.connection)
+
+app = maine("flips", 3)
+app.run()

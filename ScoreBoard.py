@@ -6,7 +6,7 @@ class ScoreBoard():
 
 		self.scoreList = []
 
-		self.scoreLocation = "./VoxelDash/scoreboard/ScoreBoard.txt"
+		self.scoreLocation = "./scoreboard/ScoreBoard.txt"
 
 		print("Score Board Initialized!")
 
